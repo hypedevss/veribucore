@@ -46,7 +46,7 @@ app.get(`/oauth2/discord`, async (req, res) => {
 			client_secret: oauth.discord.client_secret,
 			code: code,
 			grant_type: 'authorization_code',
-			redirect_uri: `https://${req.headers.host}/oauth2/discord`,
+			redirect_uri: `${oauth.baseUrl}oauth2/discord`,
 			scope: 'identify'
 		});
 		try {
