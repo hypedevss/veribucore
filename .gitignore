@@ -1,0 +1,7 @@
+pnpm-lock.yaml
+database
+backend/cert
+config.json
+unusedcode.js
+node_modules
+test.js

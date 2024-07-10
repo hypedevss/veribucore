@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veribu2 - Weryfikacja</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/selectpage/styles.css">
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			var btnCloseVerification = document.getElementById('btnCloseVerification');
+			btnCloseVerification.addEventListener('click', function() {
+				var closeFail = document.getElementById('closeFail');
+				closeFail.style.display = 'flex';
+				window.close()
+			});
+		})
+	</script>
+	<style>
+	.popup2 {
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+		z-index: 9999;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	</style>
+</head>
+    <!-- Verification Completed Popup -->
+    <div class="popup2" id="verificationPopup">
+        <div class="popup-content">
+            <img src="/selectpage/nafi.png" alt="BulermanTech">
+            <h2>Twoje IP zostało zablokowane.</h2>
+            <h4 id="closeFail" style="display: none; font-size: 12px;">Jeżeli strona się nie zamknęła zrób to ręcznie</h4>
+            <button class="btn btn-primary btn-close" id="btnCloseVerification">Zamknij</button>
+        </div>
+    </div>
+</body>
+</html>

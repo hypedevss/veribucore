@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HypeDevs - 502</title>
+    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+	.popup2 {
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.5); 
+		z-index: 9999;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	body {
+		margin: 0;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: linear-gradient(45deg, red, blue);
+		overflow: hidden;
+	}
+	.popup-content {
+		background-color: rgba(0, 0, 0, 0.8);
+		border: 5px solid black;
+		border-radius: 25px;
+		padding: 20px;
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		max-width: 80%;
+		color: white;
+		text-align: center; 
+	}
+	.popup-content img {
+		width: 120px;
+		height: 120px;
+		border-radius: 50%;
+		object-fit: cover;
+		margin-bottom: 20px;
+	}
+
+	</style>
+</head>
+    <div class="popup2">
+        <div class="popup-content">
+            <img style="border-radius: 0px;" src="/errorassets/hypedevs-hy.png" alt="HypeDevs Short logo">
+            <h2>Veribu jest Offline</h2>
+            <h4 style="font-size: 12px;">Prosimy o cierpliwość, albo skontaktowanie się z administratorem.</h4>
+        </div>
+    </div>
+</body>
+</html>

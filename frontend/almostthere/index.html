@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veribu2 - Weryfikacja</title>
+    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/selectpage/styles.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="/selectpage/script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuid.min.js"></script>
+</head>
+<body>
+    <div class="centered-rectangle" id="centeredRectangle">
+        <img src="/selectpage/nafi.png" alt="BulermanTech">
+        <div class="almost-there">Wybierz metodę weryfikacji</div>
+        <a href="https://pornhub.com" class="btn btn-primary btn-social btn-twitter">
+            <span class="fab fa-twitter btn-icon"></span> Twitter
+        </a>
+        <a href="https://pornhub.com" class="btn btn-primary btn-social btn-google">
+            <span class="fab fa-google btn-icon"></span> Google
+        </a>
+        <a href="#" class="btn btn-primary btn-social btn-captcha disabled" id="btnCaptcha">
+            <span class="fas fa-shield-alt btn-icon"></span> Captcha
+        </a>
+    </div>
+
+    <div class="popup" id="captchaPopup">
+        <div class="popup-content">
+            <img src="/selectpage/nafi.png" alt="BulermanTech">
+            <h2>Captcha</h2>
+            <div id="captcha"></div>
+        </div>
+    </div>
+
+    <div class="popup" id="verificationPopup">
+        <div class="popup-content">
+            <img src="/selectpage/nafi.png" alt="BulermanTech">
+            <h2>Weryfikacja ukończona</h2>
+            <h4 id="closeFail" style="display: none; font-size: 12px;">Jeżeli strona się nie zamknęła zrób to ręcznie</h4>
+            <button class="btn btn-primary btn-close" id="btnCloseVerification">Zamknij</button>
+        </div>
+    </div>
+</body>
+</html>
