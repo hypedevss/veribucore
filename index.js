@@ -13,6 +13,7 @@ const client = new Client({
 })
 const options =  {deploy: true, client: client}
 // globals
+if (!fs.existsSync('./database')) fs.mkdirSync('./database');
 client.commands = new Collection();
 globalThis.cmd = SlashCommandBuilder
 globalThis.djsClient = client
