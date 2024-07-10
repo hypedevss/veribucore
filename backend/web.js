@@ -31,7 +31,7 @@ app.get('/favicon.ico', (req, res) => {
 })
 
 app.get('/', (req, res) => {
-	res.sendFile('frontend/start/index.html', sopt)
+	res.send("Welcome, VeribuCore")
 })
 // discord veribu
 app.get(`/oauth2/discord`, async (req, res) => {
