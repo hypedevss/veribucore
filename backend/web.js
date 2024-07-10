@@ -38,7 +38,8 @@ app.get(`/oauth2/discord`, async (req, res) => {
 	const code = req.query.code
 	const veribudb = new nl({path: `././database/veribu.json`})
 	const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress.replace("::ffff:", "")
-	if (veribudb.get('blockedIps').includes(ip)) return res.sendFile('/frontend/almostthere/blocked.html', sopt)
+	const veribuAllat = veribudb.get('blockedIps') || [];
+	if (veribuAllat.includes(ip)) return res.sendFile('/frontend/almostthere/blocked.html', sopt)
 	if (code) {
 		const params = new URLSearchParams({
 			client_id: oauth.discord.client_id,
