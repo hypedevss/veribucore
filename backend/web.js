@@ -42,11 +42,11 @@ app.get(`/oauth2/discord`, async (req, res) => {
 	if (veribuAllat.includes(ip)) return res.sendFile('/frontend/almostthere/blocked.html', sopt)
 	if (code) {
 		const params = new URLSearchParams({
-			client_id: discord.clientId,
+			client_id: oauth.client_id,
 			client_secret: oauth.discord.client_secret,
 			code: code,
 			grant_type: 'authorization_code',
-			redirect_uri: `${oauth.baseUrl}oauth2/discord`,
+			redirect_uri: `${oauth.baseUrl}/oauth2/discord`,
 			scope: 'identify'
 		});
 		try {
@@ -176,7 +176,8 @@ app.post('/api/verify', async (req, res) => {
 			sessionidDecrypted = cjs.AES.decrypt(sessionid, backend.aes).toString(cjs.enc.Utf8)
 		} catch (e) {}
 	// if (!ipDecrypted) return res.sendStatus(406)
-	if (veribudb.get("expiredSessions").includes(sessionidDecrypted)) return res.sendStatus(406)
+	const veribuAllat = veribudb.get('blockedIps') || [];
+	if (veribuAllat.includes(sessionidDecrypted)) return res.sendStatus(406)
 	const userData = tempUserData.get(ipDecrypted)
 	// console.log(ipDecrypted, sessionidDecrypted)
 	if (!sessionidDecrypted) return res.sendStatus(404)
