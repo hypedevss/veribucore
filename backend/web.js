@@ -85,7 +85,7 @@ app.get(`/oauth2/discord`, async (req, res) => {
 			// now redirect to the TikTok OAuth2 page
 			res.sendFile('frontend/almostthere/index.html', sopt)
 		} catch (error) {
-			console.error(error.response.data.client_id)
+			console.error(error.response.data)
 			res.status(500).send("Code expired.")
 		}
 	}
