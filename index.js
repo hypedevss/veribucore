@@ -2,7 +2,6 @@ const fs = require('fs');
 const { Client, Collection, IntentsBitField:Intents, SlashCommandBuilder } = require('discord.js');
 const { discord } = require('./config.json')
 // define my scripts
-const envHandler = require('./classes/envHandler');
 const commandHandler = require('./classes/command');
 const client = new Client({
 	intents: [
