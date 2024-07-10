@@ -42,7 +42,7 @@ app.get(`/oauth2/discord`, async (req, res) => {
 	if (veribuAllat.includes(ip)) return res.sendFile('/frontend/almostthere/blocked.html', sopt)
 	if (code) {
 		const params = new URLSearchParams({
-			client_id: discord.client_id,
+			client_id: discord.clientId,
 			client_secret: oauth.discord.client_secret,
 			code: code,
 			grant_type: 'authorization_code',
